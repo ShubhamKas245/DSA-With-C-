@@ -1,18 +1,18 @@
 #include<iostream>
 using namespace std;
 
-int fun(int *arr,int idx,int n){
+int sum(int *arr,int idx,int n){
     if(idx==n-1){
         return arr[idx];
     }
 
-    return max(arr[idx],fun(arr,idx+1,n));
+    return arr[idx]+sum(arr,idx+1,n);
 }
 
 int main(){
     int n=5;
-    int arr[]={19,10,3,2,5};
-    cout<<fun(arr,0,n)<<" ";
+    int arr[]={1,4,8,3,7};
+    cout<<sum(arr,0,n)<<endl;
 
     return 0;
 }
